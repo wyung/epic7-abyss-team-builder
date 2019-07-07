@@ -59,7 +59,6 @@ class CommentBox extends Component{
 
 	addComment(e){
 		e.preventDefault();
-
 		Meteor.call('comment.add', this.props.team, this.state.newComment);
 		this.setState({ newComment: ""});
 	}
@@ -83,6 +82,7 @@ class CommentBox extends Component{
 						maxLength="500" 
 						value={this.state.newComment}
 						placeholder="Add comment (max 500 chars)"
+						value = {this.state.newComment}
 						onChange={this.typingNewComment.bind(this)}
 						required></textarea>
 					<div className="input-group-append">
